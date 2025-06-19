@@ -1,0 +1,485 @@
+/* ========== ESTILOS GENERALES ========== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+/* Encabezados centrados */
+h1, h2, h3 {
+  text-align: center;
+}
+
+/* ========== ENCABEZADO (HEADER) ========== */
+header {
+  background-color: #4c1626;
+  color: #ffffff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Alineación de logo (si se usa id="logo") */
+#logo {
+  align-items: center;
+}
+
+/* ========== MENÚ DE NAVEGACIÓN (NAV) ========== */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f3f3f3;
+  padding: 0.5rem;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #4c1626;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffb347;
+}
+
+/* ========== SECCIÓN PORTADA ========== */
+.portada {
+  position: relative;
+  background: url('image/portada.jpg') no-repeat center center/cover;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.portada .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* <-- Ajusta la opacidad */
+  z-index: 1;
+}
+
+.portada .contenido-portada {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ========== CONTENEDORES DE TEXTO ========== */
+fieldset {
+  text-align: center;
+  font-size: 18px;
+  margin: 2rem;
+  border: 2px solid #4c1626;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* ========== CATÁLOGO DE PRODUCTOS ========== */
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  max-width: 250px;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ========== FORMULARIO DE CONTACTO ========== */
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+#contacto input,
+#contacto textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* ========== BOTÓN GENÉRICO ========== */
+.btn {
+  background-color: #4c1626;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #a13a53;
+}
+
+/* ========== PIE DE PÁGINA ========== */
+footer {
+  background-color: #4c1626;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* ========== CARRITO DE COMPRAS FLOTANTE ========== */
+#carrito-icono {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ffffff;
+  color: #4c1626;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
+  transition: background 0.3s ease;
+}
+
+#carrito-icono:hover {
+  background: #ffb347;
+  color: #000;
+}
+
+#carrito {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  border: 2px solid #4c1626;
+  padding: 20px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 1001;
+  border-radius: 12px;
+}
+
+#carrito h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #4c1626;
+}
+
+#lista-carrito li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+#lista-carrito button {
+  background: rgb(236, 236, 236);
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Contador numérico en el icono del carrito */
+.contador-carrito {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0 6px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* ========== RESPONSIVE (MÓVIL) ========== */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 80%;
+  }
+}
+
+/* ========== CHECKOUT ========== */
+.checkout-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  background-color: #fff;
+  border: 2px solid #4c1626;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.checkout-container h2 {
+  color: #4c1626;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.checkout-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #4c1626;
+}
+
+.checkout-container input,
+.checkout-container textarea,
+.checkout-container select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.metodos-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.metodos-pago label {
+  font-weight: normal;
+  color: #333;
+}
+
+.checkout-container input[type="radio"] {
+  margin-right: 10px;
+  width: auto;
+}
+
+.resumen-checkout {
+  margin-top: 2rem;
+  border-top: 2px dashed #4c1626;
+  padding-top: 1rem;
+}
+
+.resumen-checkout p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.checkout-vacio {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1.3rem;
+  color: #a13a53;
+}
+
+.btn-checkout {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #4c1626;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-checkout:hover {
+  background-color: #a13a53;
+}
+
+@media (max-width: 600px) {
+  .checkout-container {
+    padding: 1.2rem;
+    margin: 2rem 1rem;
+  }
+}
+
+/* ========== BOTÓN FLOTANTE DE WHATSAPP ========== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Caja flotante de chat (enviar mensaje) */
+.chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 280px;
+  background: #ffffff;
+  border: 2px solid #25d366;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1100;
+}
+
+.chat-box textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  resize: none;
+}
+
+.chat-box button {
+  background-color: #1ebd5a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-box button:hover {
+  background-color: #1ebd5a;
+}
+
+/* ========== REDES SOCIALES (FOOTER) ========== */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffb347;
+}
+/* ===== MODAL DETALLE PRODUCTO ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.modal-contenido img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.modal-contenido h3 {
+  margin-top: 1rem;
+  color: #4c1626;
+}
+
+.modal-contenido p {
+  margin: 0.5rem 0;
+}
+
+.modal-contenido .btn {
+  margin-top: 1rem;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+}
+#buscador-productos {
+  text-align: center;
+  margin: 30px auto;
+}
+
+#buscador-productos input {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid #ae8390;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+

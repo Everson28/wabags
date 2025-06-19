@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica de codificación y escala para dispositivos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Título de la pestaña del navegador -->
+  <title>Finalizar Compra</title>
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CDN de FontAwesome para íconos sociales -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 🔰 Encabezado con logotipo y título -->
+  <header>
+    <a href="index.html">
+      <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 60px;">
+    </a><br>
+    <h1>Finalizar Compra</h1>
+  </header>
+
+  <!-- 🧭 Barra de navegación -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="acercade.html">Acerca de</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <!-- 🛒 Formulario de checkout del cliente -->
+  <main class="checkout-container">
+    <h2>Detalles del Cliente</h2>
+    <form id="formulario-checkout">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="direccion">Dirección de envío</label>
+      <textarea id="direccion" name="direccion" rows="3" required></textarea>
+
+      <label for="metodo-envio">Método de envío</label>
+      <select id="metodo-envio" name="metodo-envio">
+        <option value="express">Envío Express - $20.000</option>
+        <option value="normal">Envío Normal - $10.000</option>
+      </select>
+
+      <h2>Forma de Pago</h2>
+      <div class="metodos-pago">
+        <label><input type="radio" name="pago" value="nequi" required> Nequi</label>
+        <label><input type="radio" name="pago" value="transferencia"> Transferencia Bancaria</label>
+        <label><input type="radio" name="pago" value="contraentrega"> Pago contra entrega</label>
+      </div>
+
+      <!-- 🧾 Resumen del pedido -->
+      <div class="resumen-checkout">
+        <p><strong>Resumen del pedido:</strong></p>
+        <div id="resumen-productos">No hay productos aún.</div>
+        <p><strong>Total:</strong> <span id="total">0</span> COP</p>
+      </div>
+
+      <button type="submit" class="btn-checkout">Confirmar Pedido</button>
+    </form>
+  </main>
+
+  <!-- 📩 Pie de página con logo y redes sociales -->
+  <footer>
+    <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 40px;"><br>
+
+    <!-- 🔗 Íconos de redes sociales -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:dearmas1128@gmail.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <p>&copy; 2025 WABAGS. Todos los derechos reservados.</p>
+    <p style="font-size: 14px; color: #999;">Desarrollado por Everson De Armas &mdash; 🤙🏼</p>
+  </footer>
+
+  <!-- 📜 Script para procesar formulario y enviar pedido vía WhatsApp -->
+  <script>
+    const resumenProductos = document.getElementById("resumen-productos");
+    const totalElement = document.getElementById("total");
+    const productos = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    let total = 0;
+
+    // Si el carrito está vacío
+    if (productos.length === 0) {
+      resumenProductos.innerHTML = "<p class='checkout-vacio'>Tu carrito está vacío.</p>";
+    } else {
+      // Mostrar productos en resumen
+      resumenProductos.innerHTML = productos.map(prod => {
+        total += prod.precio;
+        return `<p>${prod.nombre} - ${prod.precio.toLocaleString()} COP</p>`;
+      }).join("");
+      totalElement.textContent = total.toLocaleString();
+    }
+
+    // Envío del formulario
+    document.getElementById("formulario-checkout").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const direccion = document.getElementById("direccion").value;
+      const metodoEnvio = document.getElementById("metodo-envio").value;
+      const metodoPago = document.querySelector("input[name='pago']:checked").value;
+
+      let mensaje = `¡Hola! Quiero hacer un pedido en WABAGS:%0A`;
+      mensaje += `👤 *Nombre:* ${nombre}%0A`;
+      mensaje += `📧 *Correo:* ${email}%0A`;
+      mensaje += `📍 *Dirección:* ${direccion}%0A`;
+      mensaje += `🚚 *Envío:* ${metodoEnvio}%0A`;
+      mensaje += `💳 *Pago:* ${metodoPago}%0A%0A`;
+      mensaje += `🛍 *Productos:*%0A`;
+
+      productos.forEach(p => {
+        mensaje += `- ${p.nombre}: ${p.precio.toLocaleString()} COP%0A`;
+      });
+
+      mensaje += `%0A💰 *Total:* ${total.toLocaleString()} COP`;
+
+      // WhatsApp destino (modifica si es necesario)
+      const numero = "573042509530";
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+
+      window.open(url, "_blank");
+
+      // Vaciar carrito
+      localStorage.removeItem("carrito");
+    });
+  </script>
+
+</body>
+</html>
+
