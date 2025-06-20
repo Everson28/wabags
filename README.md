@@ -36,7 +36,7 @@ Captura de la portada de la tienda:
 
 Captura mostrando los productos disponibles:
 
-![Productos](image/captures/productos.png)
+![Productos](image/Captures/productos.png)
 
 ---
 
@@ -52,7 +52,7 @@ Captura del carrito que aparece al añadir productos:
 
 Captura del botón de WhatsApp que se usa para finalizar la compra:
 
-![WhatsApp](image/captures/whatsapp.png)
+![WhatsApp](image/Captures/whatsapp.png)
 
 ---
 
