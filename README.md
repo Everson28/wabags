@@ -1,33 +1,89 @@
-# WABAGS E-commerce ??
+# 👜 WABAGS E-commerce
 
-**WABAGS** es una tienda virtual dedicada a la comercializaci�n de productos artesanales Wayuu, creada como parte de un laboratorio acad�mico de desarrollo de e-commerce.
+**WABAGS** es una tienda virtual diseñada para la venta de productos artesanales Wayuu, permitiendo a los usuarios descubrir productos únicos y contactar fácilmente con el vendedor vía WhatsApp.
 
-Este proyecto integra conocimientos en **HTML, CSS, JavaScript y control de versiones con Git y GitHub**, ofreciendo una experiencia de compra funcional, visualmente atractiva y centrada en la tradici�n cultural Wayuu.
-
-## ?? Caracter�sticas principales
-
-- Cat�logo de productos con im�genes y precios
-- Carrito de compras funcional con almacenamiento local
-- Modal de vista previa para cada producto
-- Buscador de productos en tiempo real
-- Integraci�n con WhatsApp para realizar pedidos
-- Responsive design (adaptable a dispositivos m�viles)
-- Publicaci�n del sitio con GitHub Pages
-
-## ?? Tecnolog�as utilizadas
-
-- HTML5
-- CSS3 (con estilo moderno e interactivo)
-- JavaScript Vanilla (JS puro)
-- Git y GitHub para control de versiones
-
-## ?? Desarrollado por
-
-**Everson De Armas**, un Wayuu apacionado por la tecnologia.
-
-## ?? Sitio en producci�n
-
-?? [Visitar WABAGS en GitHub Pages](https://everson28.github.io/wabags/)
+🔗 **Sitio Web:** [https://everson28.github.io/wabags/](https://everson28.github.io/wabags/)
 
 ---
 
+## 🎯 Objetivo
+
+Crear una tienda web funcional que facilite la visualización de productos artesanales, permita añadirlos al carrito de compras, y finalice el pedido directamente por WhatsApp.
+
+---
+
+## 🧰 Tecnologías utilizadas
+
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla JS)  
+- Git y GitHub  
+- GitHub Pages para publicación  
+
+---
+
+## 🖼️ Capturas de pantalla
+
+### 🏠 Página de inicio
+
+Captura de la portada de la tienda:
+
+![Inicio](image/captures/inicio.png)
+
+---
+
+### 🛍️ Catálogo de productos
+
+Captura mostrando los productos disponibles:
+
+![Productos](image/captures/productos.png)
+
+---
+
+### 🛒 Carrito de compras flotante
+
+Captura del carrito que aparece al añadir productos:
+
+![Carrito](image/Captures/carrito.png)
+
+---
+
+### 💬 Finalizar compra por WhatsApp
+
+Captura del botón de WhatsApp que se usa para finalizar la compra:
+
+![WhatsApp](image/captures/whatsapp.png)
+
+---
+
+## 🗂️ Estructura del proyecto
+
+Wabags E-commerce/
+├─ index.html
+├─ productos.html
+├─ style.css
+├─ funcion.js
+├─ image/
+│ └─ (Imágenes de productos y logos)
+├─ captures/
+│ ├─ inicio.png
+│ ├─ productos.png
+│ ├─ carrito.png
+│ └─ whatsapp.png
+└─ README.md
+
+Autor
+Desarrollado por Everson De Armas
+📧 dearmas1128@gmail.com
+📱 Instagram: @de_armas28
+
+Proyecto cultural
+Esta tienda busca difundir la cultura Wayuu y facilitar el comercio justo de productos artesanales hechos a mano por la comunidad.
+
+🧪 Estado del proyecto
+✅ Versión inicial publicada
+🚀 Funcional y activa
+🔧 En mejora constante
+
+📝 Licencia
+Este proyecto puede ser reutilizado para fines educativos o culturales. Atribución requerida.
