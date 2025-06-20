@@ -28,7 +28,7 @@ Crear una tienda web funcional que facilite la visualización de productos artes
 
 Captura de la portada de la tienda:
 
-![Inicio](image/captures/inicio.png)
+![Inicio](image/Captures/inicio.png)
 
 ---
 
