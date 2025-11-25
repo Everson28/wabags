@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Ícono de la pestaña del navegador -->
-  <link rel="icon" href="image/1x/favicon1.png" type="image/x-icon"> 
+  <link rel="icon" href="image/1x/favicon1.png" type="image/x-icon">
   <title>Productos</title>
-  
+
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="style.css">
 
@@ -15,164 +16,96 @@
 </head>
 
 <body>
-<!-- 🔵 Icono flotante del carrito con contador -->
-<div id="carrito-icono">
-  <img src="image/1x/carrito.png" alt="carrito" height="20"> 
-  <span id="contador-carrito">0</span>
-</div>
-
-<!-- 🛒 Carrito flotante con resumen de compra -->
-<div id="carrito" style="display:none;">
-  <img class="logo" src="image/1x/logoV.png" alt="Logo WABAGS" style="height: 30px;"><br>
-  <h3>Carrito de Compras</h3>
-  <ul id="lista-carrito"></ul>
-  <p>Subtotal: <span id="subtotal-valor">$0</span></p>
-  <p>Total: <span id="total-valor">0</span></p>
-  <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
-  <button class="btn" onclick="vaciarCarrito()">Vaciar</button>
-</div>
-
-<!-- 🔰 Encabezado con logo y eslogan -->
-<header>
-  <a href="index.html">
-    <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 60px;">
-  </a><br>
-  <p>¡Encuentra productos únicos y compra fácil!</p>
-</header>
-
-<!-- 🧭 Menú de navegación -->
-<nav>
-  <a href="index.html">Inicio</a>
-  <a href="productos.html">Productos</a>
-  <a href="acercade.html">Acerca de</a>
-  <a href="index.html#contacto"> Contacto</a>
-</nav>
-<!-- 🔍 Buscador de productos -->
-<div id="buscador-productos" style="text-align: center; margin: 20px;">
-  <input type="text" id="input-busqueda" placeholder="Buscar productos..." style="padding: 10px; width: 60%; max-width: 400px;">
-</div>
-
-<!-- 🛍️ Sección de productos en catálogo -->
-<section id="catalogo">
-  <h2>Catálogo de Productos</h2>
-  <div class="product-grid">
-
-    <!-- Producto 1 -->
-    <div class="product">
-      <img src="image/B1.jpg" alt="Bolso Wayuu Tradicional" width="700">
-      <h3>Bolso Wayuu Tradicional</h3>
-      <p>$80.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Wayuu Tradicional')">Agregar al carrito</button>
-    </div>
-
-    <!-- Producto 2 -->
-    <div class="product">
-      <img src="image/B2.jpg" alt="Bolso Premium">
-      <h3>Bolso Premium</h3>
-      <p>$120.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Premium')">Agregar al carrito</button>
-    </div>
-
-    <!-- Producto 3 -->
-    <div class="product">
-      <img src="image/B3.jpg" alt="Accesorio Artesanal">
-      <h3>Accesorio Artesanal</h3>
-      <p>$30.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Accesorio Artesanal')">Agregar al carrito</button>
-    </div>
-
-    <!-- Repetidos para simular más productos -->
-    <div class="product">
-      <img src="image/B4.jpg" alt="Bolso Wayuu Tradicional">
-      <h3>Bolso Wayuu Tradicional</h3>
-      <p>$80.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Wayuu Tradicional')">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="image/B5.jpg" alt="Bolso Premium">
-      <h3>Bolso Premium</h3>
-      <p>$120.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Premium')">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="image/B6.jpg" alt="Accesorio Artesanal">
-      <h3>Accesorio Artesanal</h3>
-      <p>$30.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Accesorio Artesanal')">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="image/B7.jpg" alt="Bolso Wayuu Tradicional">
-      <h3>Bolso Wayuu Tradicional</h3>
-      <p>$80.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Wayuu Tradicional')">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="image/B8.jpg" alt="Bolso Premium" width="700">
-      <h3>Bolso Premium</h3>
-      <p>$120.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Premium')">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="image/B9.jpg" alt="Accesorio Artesanal">
-      <h3>Accesorio Artesanal</h3>
-      <p>$30.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Accesorio Artesanal')">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="image/B10.jpg" alt="Bolso Wayuu Tradicional">
-      <h3>Bolso Wayuu Tradicional</h3>
-      <p>$80.000</p>
-      <button class="btn" onclick="agregarAlCarrito('Bolso Wayuu Tradicional')">Agregar al carrito</button>
-    </div>
-
-  </div>
-</section>
-<!-- 🪟 Modal de producto -->
-<div id="modal-producto" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarModal()">&times;</span>
-    <img id="modal-img" src="" alt="Imagen del producto">
-    <h3 id="modal-nombre"></h3>
-    <p id="modal-precio"></p>
-    <p id="modal-descripcion">Producto artesanal hecho por mujeres Wayuu.</p>
-    <button id="modal-agregar" class="btn">Agregar al carrito</button>
-  </div>
-</div>
-<!-- 🟢 Botón flotante de WhatsApp -->
-<div class="whatsapp-float" onclick="toggleChatBox()">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</div>
-
-<!-- 💬 Caja de chat flotante con mensaje editable -->
-<div id="chat-box" class="chat-box">
-  <textarea id="mensajeChat" placeholder="Escribe tu mensaje...">Hola, estoy interesado en un producto Wayuu 😊</textarea>
-  <button onclick="enviarMensajeWhatsApp()">Enviar</button>
-</div>
-
-<!-- 📩 Pie de página con logo y redes sociales -->
-<footer>
-  <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 40px;"><br>
-  
-  <!-- Iconos de redes sociales -->
-  <div class="social-icons">
-    <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:dearmas1128@gmail.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
+  <!-- 🔵 Icono flotante del carrito con contador -->
+  <div id="carrito-icono">
+    <img src="image/1x/carrito.png" alt="carrito" height="20">
+    <span id="contador-carrito">0</span>
   </div>
 
-  <p>&copy; 2025 WABAGS. Todos los derechos reservados.</p>
-  <p style="font-size: 14px; color: #999;">Desarrollado por Everson De Armas &mdash; 🤙🏼</p>
-</footer>
+  <!-- 🛒 Carrito flotante con resumen de compra -->
+  <div id="carrito" style="display:none;">
+    <img class="logo" src="image/1x/logoV.png" alt="Logo WABAGS" style="height: 30px;"><br>
+    <h3>Carrito de Compras</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Subtotal: <span id="subtotal-valor">$0</span></p>
+    <p>Total: <span id="total-valor">0</span></p>
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="btn" onclick="vaciarCarrito()">Vaciar</button>
+  </div>
 
-<!-- 📜 Funciones JavaScript -->
-<script src="funcion.js"></script>
+  <!-- 🔰 Encabezado con logo y eslogan -->
+  <header>
+    <a href="index.html">
+      <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 60px;">
+    </a><br>
+    <p>¡Encuentra productos únicos y compra fácil!</p>
+  </header>
+
+  <!-- 🧭 Menú de navegación -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="acercade.html">Acerca de</a>
+    <a href="index.html#contacto"> Contacto</a>
+  </nav>
+  <!-- 🔍 Buscador de productos -->
+  <div id="buscador-productos" style="text-align: center; margin: 20px;">
+    <input type="text" id="input-busqueda" placeholder="Buscar productos..."
+      style="padding: 10px; width: 60%; max-width: 400px;">
+  </div>
+
+  <!-- 🛍️ Sección de productos en catálogo -->
+  <section id="catalogo">
+    <h2>Catálogo de Productos</h2>
+    <!-- Contenedor dinámico de todos los productos -->
+    <div id="all-products-container" class="product-grid">
+      <!-- Los productos se cargarán aquí con JavaScript -->
+    </div>
+  </section>
+  <!-- 🪟 Modal de producto -->
+  <div id="modal-producto" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <img id="modal-img" src="" alt="Imagen del producto">
+      <h3 id="modal-nombre"></h3>
+      <p id="modal-precio"></p>
+      <p id="modal-descripcion">Producto artesanal hecho por mujeres Wayuu.</p>
+      <button id="modal-agregar" class="btn">Agregar al carrito</button>
+    </div>
+  </div>
+  <!-- 🟢 Botón flotante de WhatsApp -->
+  <div class="whatsapp-float" onclick="toggleChatBox()">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </div>
+
+  <!-- 💬 Caja de chat flotante con mensaje editable -->
+  <div id="chat-box" class="chat-box">
+    <textarea id="mensajeChat"
+      placeholder="Escribe tu mensaje...">Hola, estoy interesado en un producto Wayuu 😊</textarea>
+    <button onclick="enviarMensajeWhatsApp()">Enviar</button>
+  </div>
+
+  <!-- 📩 Pie de página con logo y redes sociales -->
+  <footer>
+    <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 40px;"><br>
+
+    <!-- Iconos de redes sociales -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:dearmas1128@gmail.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <p>&copy; 2025 WABAGS. Todos los derechos reservados.</p>
+    <p style="font-size: 14px; color: #999;">Desarrollado por Everson De Armas &mdash; 🤙🏼</p>
+  </footer>
+
+  <!-- 📜 Funciones JavaScript -->
+  <script src="funcion.js"></script>
 
 </body>
+
 </html>

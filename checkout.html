@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- Configuración básica de codificación y escala para dispositivos -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Título de la pestaña del navegador -->
   <title>Finalizar Compra</title>
@@ -76,8 +77,10 @@
 
     <!-- 🔗 Íconos de redes sociales -->
     <div class="social-icons">
-      <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i
+          class="fab fa-instagram"></i></a>
       <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       <a href="mailto:dearmas1128@gmail.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
     </div>
@@ -87,60 +90,9 @@
   </footer>
 
   <!-- 📜 Script para procesar formulario y enviar pedido vía WhatsApp -->
-  <script>
-    const resumenProductos = document.getElementById("resumen-productos");
-    const totalElement = document.getElementById("total");
-    const productos = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    let total = 0;
-
-    // Si el carrito está vacío
-    if (productos.length === 0) {
-      resumenProductos.innerHTML = "<p class='checkout-vacio'>Tu carrito está vacío.</p>";
-    } else {
-      // Mostrar productos en resumen
-      resumenProductos.innerHTML = productos.map(prod => {
-        total += prod.precio;
-        return `<p>${prod.nombre} - ${prod.precio.toLocaleString()} COP</p>`;
-      }).join("");
-      totalElement.textContent = total.toLocaleString();
-    }
-
-    // Envío del formulario
-    document.getElementById("formulario-checkout").addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const nombre = document.getElementById("nombre").value;
-      const email = document.getElementById("email").value;
-      const direccion = document.getElementById("direccion").value;
-      const metodoEnvio = document.getElementById("metodo-envio").value;
-      const metodoPago = document.querySelector("input[name='pago']:checked").value;
-
-      let mensaje = `¡Hola! Quiero hacer un pedido en WABAGS:%0A`;
-      mensaje += `👤 *Nombre:* ${nombre}%0A`;
-      mensaje += `📧 *Correo:* ${email}%0A`;
-      mensaje += `📍 *Dirección:* ${direccion}%0A`;
-      mensaje += `🚚 *Envío:* ${metodoEnvio}%0A`;
-      mensaje += `💳 *Pago:* ${metodoPago}%0A%0A`;
-      mensaje += `🛍 *Productos:*%0A`;
-
-      productos.forEach(p => {
-        mensaje += `- ${p.nombre}: ${p.precio.toLocaleString()} COP%0A`;
-      });
-
-      mensaje += `%0A💰 *Total:* ${total.toLocaleString()} COP`;
-
-      // WhatsApp destino (modifica si es necesario)
-      const numero = "573042509530";
-      const url = `https://wa.me/${numero}?text=${mensaje}`;
-
-      window.open(url, "_blank");
-
-      // Vaciar carrito
-      localStorage.removeItem("carrito");
-    });
-  </script>
+  <!-- 📜 Script para procesar formulario y enviar pedido vía WhatsApp -->
+  <script src="funcion.js"></script>
 
 </body>
-</html>
 
+</html>
