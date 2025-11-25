@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- Configuración básica de la página -->
   <meta charset="UTF-8">
@@ -7,7 +8,15 @@
   <title>Wabags</title>
 
   <!-- Estilos externos -->
+  <!-- Estilos externos -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fuentes: Playfair Display (Títulos) y Poppins (Texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
 
   <!-- Iconos de FontAwesome para íconos como WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -17,138 +26,152 @@
   <meta name="keywords" content="Wayuu, mochilas, bolsos artesanales, Wabags, productos Wayuu">
 
   <!-- Ícono de la pestaña del navegador -->
-  <link rel="icon" href="image/1x/favicon1.png" type="image/x-icon"> 
+  <link rel="icon" href="image/1x/favicon1.png" type="image/x-icon">
 </head>
 
 <body>
 
-<!-- 🔵 Icono del carrito flotante en la esquina superior derecha -->
-<div id="carrito-icono">
-  <img src="image/1x/carrito.png" alt="carrito" height="20"> 
-  <span id="contador-carrito">0</span>
-</div>
-
-<!-- 🛒 Carrito desplegable con detalles -->
-<div id="carrito" style="display:none;">
-  <img class="log" src="image/1x/logoV.png" alt="Logo WABAGS" style="height: 30px;"><br>
-  <h3>Carrito de Compras</h3>
-  <ul id="lista-carrito"></ul>
-  <p>Subtotal: <span id="subtotal-valor">$0</span></p>
-  <p>Total: <span id="total-valor">0</span></p>
-  <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
-  <button class="btn" onclick="vaciarCarrito()">Vaciar</button>
-</div>
-
-<!-- 🔰 Encabezado con logo y eslogan -->
-<header>
-  <a href="index.html">
-    <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 60px;">
-  </a><br>
-  <p>¡Encuentra productos únicos y compra fácil!</p>
-</header>
-
-<!-- 🧭 Navegación principal -->
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="productos.html">Productos</a>
-  <a href="acercade.html">Acerca de</a>
-  <a href="#contacto">Contacto</a>
-</nav>
-
-<!-- 📸 Imagen de portada -->
-<section id="inicio" class="portada">
-  <div class="contenido-portada">
-    <h2>Bienvenido a nuestra tienda</h2>
-    <p>Explora nuestros productos y añade al carrito los que más te gusten.</p>
+  <!-- 🔵 Icono del carrito flotante en la esquina superior derecha -->
+  <div id="carrito-icono">
+    <img src="image/1x/carrito.png" alt="carrito" height="20">
+    <span id="contador-carrito">0</span>
   </div>
-</section>
 
-<!-- 🛍️ Catálogo de productos destacados -->
-<section id="catalogo">
-  <h2>Productos Destacados</h2>
+  <!-- 🛒 Carrito desplegable con detalles -->
+  <div id="carrito" style="display:none;">
+    <img class="log" src="image/1x/logoV.png" alt="Logo WABAGS" style="height: 30px;"><br>
+    <h3>Carrito de Compras</h3>
+    <ul id="lista-carrito"></ul>
+    <p>Subtotal: <span id="subtotal-valor">$0</span></p>
+    <p>Total: <span id="total-valor">0</span></p>
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="btn" onclick="vaciarCarrito()">Vaciar</button>
+  </div>
+
+  <!-- 🔰 Encabezado con logo y eslogan -->
+  <header>
+    <a href="index.html">
+      <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 60px;">
+    </a><br>
+    <p>¡Encuentra productos únicos y compra fácil!</p>
+  </header>
+
+  <!-- 🧭 Navegación principal -->
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="acercade.html">Acerca de</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- 📸 Imagen de portada -->
+  <section id="inicio" class="portada">
+    <div class="contenido-portada">
+      <h2>Bienvenido a nuestra tienda</h2>
+      <p>Explora nuestros productos y añade al carrito los que más te gusten.</p>
+    </div>
+  </section>
+
+  <!-- 🛍️ Catálogo de productos destacados -->
+  <section id="catalogo">
+    <h2>Productos Destacados</h2>
     <!-- Contenedor dinámico de productos destacados -->
     <div id="featured-products-container" class="product-grid">
       <!-- Los productos se cargarán aquí con JavaScript -->
     </div>
-</section>
+  </section>
 
-<!-- 📜 Historia de la marca en un fieldset decorativo -->
-<section id="historia">
-  <fieldset>
-    <legend><h3>Nuestra Historia</h3></legend>
-    <p>
-      <!-- Texto personalizado sobre la historia de WABAGS -->
-      WABAGS nace del deseo profundo de llevar el arte ancestral Wayuu más allá de nuestras fronteras. Desde La Guajira, Colombia, nuestra marca representa no solo productos, sino historias tejidas a mano, con alma, paciencia y tradición.
+  <!-- 📜 Historia de la marca en un fieldset decorativo -->
+  <section id="historia">
+    <fieldset>
+      <legend>
+        <h3>Nuestra Historia</h3>
+      </legend>
+      <p>
+        <!-- Texto personalizado sobre la historia de WABAGS -->
+        WABAGS nace del deseo profundo de llevar el arte ancestral Wayuu más allá de nuestras fronteras. Desde La
+        Guajira, Colombia, nuestra marca representa no solo productos, sino historias tejidas a mano, con alma,
+        paciencia y tradición.
 
-      Todo comenzó con una mochila y un sueño: conectar al mundo con el color, el simbolismo y la riqueza cultural de nuestro pueblo. Cada bolso Wayuu que ofrecemos no es simplemente un accesorio, sino una expresión viva de identidad, herencia y orgullo.
-      
-      En WABAGS creemos en el poder del diseño personalizado. Por eso, ofrecemos la posibilidad de que cada cliente cree un producto único, a su estilo, a su gusto. Porque entendemos que la moda también puede ser un puente entre culturas.
-      
-      Más que una tienda, somos una comunidad que respeta y honra el trabajo artesanal, empoderando a mujeres tejedoras, protegiendo saberes ancestrales y apostando por una economía más justa y humana.
-      
-      Hoy seguimos creciendo, pero sin perder nuestras raíces. WABAGS es el hilo que une tradición y modernidad, una voz Wayuu que resuena con fuerza en cada puntada.
-    </p>
-  </fieldset>
-</section>
-<!-- 📬 Sección de contacto con formulario -->
-<section id="contacto">
-  <h2>Contacto</h2>
-  <form action="#"> <!-- ✅ Corregido: se añadió action="#" para accesibilidad -->
-    <!-- Campo para nombre del usuario -->
-    <label for="nombre">Nombre completo</label>
-    <input type="text" id="nombre" placeholder="Nombre completo" required>
+        Todo comenzó con una mochila y un sueño: conectar al mundo con el color, el simbolismo y la riqueza cultural de
+        nuestro pueblo. Cada bolso Wayuu que ofrecemos no es simplemente un accesorio, sino una expresión viva de
+        identidad, herencia y orgullo.
 
-    <!-- Campo para correo del usuario -->
-    <label for="correo">Correo electrónico</label>
-    <input type="email" id="correo" placeholder="Correo electrónico" required>
+        En WABAGS creemos en el poder del diseño personalizado. Por eso, ofrecemos la posibilidad de que cada cliente
+        cree un producto único, a su estilo, a su gusto. Porque entendemos que la moda también puede ser un puente entre
+        culturas.
 
-    <!-- Área de texto para el mensaje del usuario -->
-    <label for="mensaje">Mensaje</label>
-    <textarea id="mensaje" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+        Más que una tienda, somos una comunidad que respeta y honra el trabajo artesanal, empoderando a mujeres
+        tejedoras, protegiendo saberes ancestrales y apostando por una economía más justa y humana.
 
-    <!-- Botón de envío del formulario -->
-    <button class="btn" type="submit">Enviar</button>
-  </form>
-</section>
-<!-- 🪟 Modal de producto -->
-<div id="modal-producto" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarModal()">&times;</span>
-    <img id="modal-img" src="" alt="Imagen del producto">
-    <h3 id="modal-nombre"></h3>
-    <p id="modal-precio"></p>
-    <p id="modal-descripcion">Producto artesanal hecho por mujeres Wayuu.</p>
-    <button id="modal-agregar" class="btn">Agregar al carrito</button>
+        Hoy seguimos creciendo, pero sin perder nuestras raíces. WABAGS es el hilo que une tradición y modernidad, una
+        voz Wayuu que resuena con fuerza en cada puntada.
+      </p>
+    </fieldset>
+  </section>
+  <!-- 📬 Sección de contacto con formulario -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="#"> <!-- ✅ Corregido: se añadió action="#" para accesibilidad -->
+      <!-- Campo para nombre del usuario -->
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+      <!-- Campo para correo del usuario -->
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+
+      <!-- Área de texto para el mensaje del usuario -->
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+
+      <!-- Botón de envío del formulario -->
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+  </section>
+  <!-- 🪟 Modal de producto -->
+  <div id="modal-producto" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <img id="modal-img" src="" alt="Imagen del producto">
+      <h3 id="modal-nombre"></h3>
+      <p id="modal-precio"></p>
+      <p id="modal-descripcion">Producto artesanal hecho por mujeres Wayuu.</p>
+      <button id="modal-agregar" class="btn">Agregar al carrito</button>
+    </div>
   </div>
-</div>
 
-<!-- 🟢 Botón flotante de WhatsApp -->
-<div class="whatsapp-float" onclick="toggleChatBox()">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</div>
+  <!-- 🟢 Botón flotante de WhatsApp -->
+  <div class="whatsapp-float" onclick="toggleChatBox()">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </div>
 
-<!-- 💬 Caja de chat flotante con mensaje editable -->
-<div id="chat-box" class="chat-box">
-  <textarea id="mensajeChat" placeholder="Escribe tu mensaje...">Hola, estoy interesado en un producto Wayuu 😊</textarea>
-  <button onclick="enviarMensajeWhatsApp()">Enviar</button><br><br>
-</div>
+  <!-- 💬 Caja de chat flotante con mensaje editable -->
+  <div id="chat-box" class="chat-box">
+    <textarea id="mensajeChat"
+      placeholder="Escribe tu mensaje...">Hola, estoy interesado en un producto Wayuu 😊</textarea>
+    <button onclick="enviarMensajeWhatsApp()">Enviar</button><br><br>
+  </div>
 
-<!-- 📩 Pie de página con derechos y logo -->
-<footer>
-  <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 40px;"><br>
-  <!-- Redes sociales -->
-<div class="social-icons">
-  <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="mailto:dearmas1128@gmail.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
-</div>
-<p>&copy; 2025 WABAGS. Todos los derechos reservados.</p>
-<p style="font-size: 14px; color: #999;">Desarrollado por Everson De Armas &mdash; 🤙🏼</p>
-</footer>
+  <!-- 📩 Pie de página con derechos y logo -->
+  <footer>
+    <img src="image/1x/logoB.png" alt="Logo WABAGS" style="height: 40px;"><br>
+    <!-- Redes sociales -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/dearmas1128" target="_blank" title="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/de_armas28/" target="_blank" title="Instagram"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:dearmas1128@gmail.com" target="_blank" title="Correo"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 WABAGS. Todos los derechos reservados.</p>
+    <p style="font-size: 14px; color: #999;">Desarrollado por Everson De Armas &mdash; 🤙🏼</p>
+  </footer>
 
-<!-- 📜 Script que contiene funciones como agregar al carrito, WhatsApp, etc. -->
-<script src="funcion.js"></script>
+  <!-- 📜 Script que contiene funciones como agregar al carrito, WhatsApp, etc. -->
+  <script src="funcion.js"></script>
 
 </body>
+
 </html>
