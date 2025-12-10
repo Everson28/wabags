@@ -1,14 +1,17 @@
 /* ========== VARIABLES & RESET ========== */
 :root {
-  --primary-color: #4c1626;   /* Vinotinto Wayuu */
-  --secondary-color: #D4A373; /* Dorado Arena */
-  --bg-color: #FAFAF5;        /* Blanco Cálido */
+  --primary-color: #4c1626;
+  /* Vinotinto Wayuu */
+  --secondary-color: #D4A373;
+  /* Dorado Arena */
+  --bg-color: #FAFAF5;
+  /* Blanco Cálido */
   --white: #FFFFFF;
   --text-color: #333333;
   --light-gray: #f4f4f4;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
   --radius: 12px;
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
@@ -27,7 +30,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--primary-color);
   margin-top: 0;
@@ -106,7 +114,8 @@ nav a:hover {
 .portada {
   position: relative;
   background: url('image/portada.jpg') no-repeat center center/cover;
-  height: 400px; /* Más alto para impacto */
+  height: 400px;
+  /* Más alto para impacto */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +130,8 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Oscurecer imagen */
+  background: rgba(0, 0, 0, 0.5);
+  /* Oscurecer imagen */
 }
 
 .contenido-portada {
@@ -135,7 +145,7 @@ nav a:hover {
   font-size: 3rem;
   color: var(--white);
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contenido-portada p {
@@ -244,7 +254,8 @@ fieldset {
   margin-bottom: 2rem;
 }
 
-legend h2, legend h3 {
+legend h2,
+legend h3 {
   padding: 0 1rem;
   font-size: 1.8rem;
 }
@@ -307,6 +318,12 @@ legend h2, legend h3 {
   background: var(--secondary-color);
   color: var(--white);
   transform: scale(1.05);
+}
+
+#carrito-icono img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 #carrito {
@@ -443,11 +460,11 @@ footer {
     gap: 1rem;
     padding: 1.5rem;
   }
-  
+
   .portada h2 {
     font-size: 2rem;
   }
-  
+
   .product-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
@@ -465,7 +482,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   z-index: 1100;
   transition: transform 0.3s ease;
